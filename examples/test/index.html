@@ -100,6 +100,7 @@
 							awe.pois.add({ id:'south_west', position: { x:-200, y:0, z:-200 } });
 							awe.pois.add({ id:'west', position: { x:-200, y:0, z:0 } });
 							awe.pois.add({ id:'north_west', position: { x:-200, y:0, z:200 } });
+							awe.pois.add({ id:'rags', position: { x:-200, y:200, z:200 } });
 			
 							// add projections to each of the pois
 								awe.projections.add({ 
@@ -171,7 +172,14 @@
 																						},
 																	}, { poi_id: 'north_west' });
 								awe.projections.add({
-								})
+																		id:'rag'
+																		geometry:{shape:'plane',width:500,height:500},
+																		material:{ 
+																							type: 'phong',
+																							color:0xCCCCCC, 
+																						},
+																		texture: { path: '92D8.mp4' },
+																	},{poi_id:'rags'});
 							},
 						},
 						{ // else create a fallback
