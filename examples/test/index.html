@@ -163,23 +163,16 @@
 																							color:0x0000FF, 
 																						},
 																	}, { poi_id: 'west' });
-								awe.projections.add({ 
-																		id:'nw', 
-																		geometry:{ shape:'sphere', radius:10 }, 
-																		material:{ 
-																							type: 'phong',
-																							color:0xCCCCCC, 
-																						},
-																	}, { poi_id: 'north_west' });
+								
 								awe.projections.add({
-																		id:'rag'
+																		id:'nw'
 																		geometry:{shape:'plane',width:500,height:500},
 																		material:{ 
 																							type: 'phong',
 																							color:0xCCCCCC, 
 																						},
 																		texture: { path: '92D8.mp4' },
-																	},{poi_id:'rags'});
+																	},{poi_id:'north_west'});
 							},
 						},
 						{ // else create a fallback
