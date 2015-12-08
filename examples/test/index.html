@@ -138,11 +138,12 @@
 																		}, { poi_id: 'south_east' });
 								awe.projections.add({ 
 																		id:'s', 
-																		geometry:{ shape:'cube', x:50, y:50, z:50 }, 
-																		rotation:{ x:30, y:30, z:0 },
+																		geometry: {shape: 'plane', height: 400, width: 400},
+																		rotation:{x:90,y:0,z:0},
+																		position: {x: 0, y: 0, z: 0},
 																		material:{ 
 																							type: 'phong',
-																							color:0xFFFFFF, 
+																							color:0x0000FF, 
 																						},
 																	}, { poi_id: 'south' });
 								awe.projections.add({ 
