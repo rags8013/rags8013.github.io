@@ -93,7 +93,6 @@
 							}, false);
 							// add some points of interest (poi) for each of the compass points
 							awe.pois.add({ id:'west', position: { x:-200, y:0, z:0 } });
-							awe.pois.add({ id:'north_west', position: { x:-200, y:0, z:200 } });
 			
 							// add projections to each of the pois
 								
@@ -108,15 +107,6 @@
 																							color:0xFFFFFF, 
 																						},
 																	}, { poi_id: 'west' });
-								awe.projections.add({ 
-																		id:'nw', 
-																		geometry:{ shape:'sphere', radius:10 }, 
-																		material:{ 
-																							type: 'phong',
-																							color:0xCCCCCC, 
-																						},
-																						
-																	}, { poi_id: 'north_west' });
 							},
 						},
 						{ // else create a fallback
