@@ -78,19 +78,6 @@
 								// setup and paint the scene
 								window.awe.setup_scene();
 								// setup some code to handle when an object is clicked/tapped
-								window.addEventListener('object_clicked', function(e) 
-								{ 
-									var p = awe.projections.view(e.detail.projection_id);
-									awe.projections.update({ // rotate clicked object by 180 degrees around x and y axes over 10 seconds
-											data:{
-														animation: {
-																				duration: 10,
-																			},
-													rotation:{ y: p.rotation.y+180, x: p.rotation.x+180 }
-												},
-								where:{ id:e.detail.projection_id }
-								});
-							}, false);
 							// add some points of interest (poi) for each of the compass points
 							awe.pois.add({ id:'west', position: { x:-200, y:0, z:0 } });
 			
