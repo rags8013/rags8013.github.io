@@ -26,11 +26,8 @@
 		<script type="text/javascript">
 			window.addEventListener('load', function() 
 			{
-				// initialize awe after page loads
 				window.awe.init({
-					// automatically detect the device type
 					device_type: awe.AUTO_DETECT_DEVICE_TYPE,
-					// populate some default settings
 					settings: {
 										container_id: 'container',
 										fps: 30,
@@ -45,21 +42,17 @@
 									},
 					ready: function() 
 					{
-						// load js files based on capability detection then setup the scene if successful
 						awe.util.require([
 						{
 							capabilities: ['gum','gyro','webgl'],
 							files: [ 
-										[ '../../js/awe-standard-dependencies.js', '../../js/awe-standard.js' ], // core dependencies for this app 
-										'../../js/awe-standard-window_resized.js', // window resize handling plugin
-										'../../js/awe-standard-object_clicked.js', // object click/tap handling plugin
-										'awe.geo_ar.js', // geo ar plugin
+										[ '../../js/awe-standard-dependencies.js', '../../js/awe-standard.js' ], 
+										'../../js/awe-standard-window_resized.js', 
+										'../../js/awe-standard-object_clicked.js', 
+										'awe.geo_ar.js', 
 									],
 							success: function() 
 							{ 
-								// limit demo to supported devices
-								// NOTE: only Chrome and Firefox has implemented the DeviceOrientation API in a workable way
-								//       so for now we are excluding all others to make sure your first experience is a happy one
 								var device_type = awe.device_type();
 								var browser_unsupported = false;
 								if (device_type != 'android') 
@@ -75,14 +68,8 @@
 									document.body.innerHTML = '<p>This demo currently requires a standards compliant Android browser (e.g. Chrome M33).</p>';
 									return;
 								}
-								// setup and paint the scene
 								window.awe.setup_scene();
-								// setup some code to handle when an object is clicked/tapped
-							// add some points of interest (poi) for each of the compass points
-							awe.pois.add({ id:'west', position: { x:-200, y:0, z:0 } });
-			
-							// add projections to each of the pois
-								
+								awe.pois.add({ id:'west', position: { x:-200, y:0, z:0 } });
 								awe.projections.add({ 
 																		id:'w', 
 																		geometry: {shape: 'plane', height: 100, width: 100},
@@ -96,7 +83,7 @@
 																	}, { poi_id: 'west' });
 							},
 						},
-						{ // else create a fallback
+						{
 							capabilities: [],
 							files: [],
 							success: function() 
