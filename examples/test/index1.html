@@ -48,7 +48,7 @@
 						// load js files based on capability detection then setup the scene if successful
 						awe.util.require([
 						{
-							capabilities: ['gum','webgl'],
+							capabilities: ['gum','gyro','webgl'],
 							files: [ 
 										[ '../../js/awe-standard-dependencies.js', '../../js/awe-standard.js' ], // core dependencies for this app 
 										'../../js/awe-standard-window_resized.js', // window resize handling plugin
@@ -58,7 +58,7 @@
 							success: function() 
 							{ 
 								window.awe.setup_scene();
-								awe.pois.add({ id:'marker', position: { x:0, y:0, z:0 } ,visible: true});
+								awe.pois.add({ id:'marker', position: { x:200, y:0, z:0 } });
 								awe.projections.add({ 
 																		id:'player', 
 																		geometry: {shape: 'plane', height: 100, width: 100},
